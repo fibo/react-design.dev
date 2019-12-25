@@ -1,0 +1,35 @@
+{
+  "name": "react-design",
+  "version": "0.0.0",
+  "description": "design your react components on an infinite paper",
+  "main": "react-design.js",
+  "scripts": {
+    "browserify": "cross-env NODE_ENV=production browserify src/docs/index.js -t babelify -g [ envify --NODE_ENV production ] -g uglifyify | terser --compress --mangle > docs/bundle.js",
+    "start": "cross-env NODE_PATH=. budo docs/index.js --dir docs --serve bundle.js --open --live --pushstate -- -t babelify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fibo/react-design.git"
+  },
+  "keywords": [
+    "react",
+    "design",
+    "sketch",
+    "figma",
+    "framer"
+  ],
+  "author": {
+    "name": "Gianluca Casati",
+    "url": "http://g14n.info"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fibo/react-design/issues"
+  },
+  "homepage": "https://github.com/fibo/react-design#readme",
+  "devDependencies": {
+    "react-router-dom": "^5.1.2",
+    "zeroconf-redux": "^5.3.0"
+  }
+}
