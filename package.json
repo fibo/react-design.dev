@@ -4,8 +4,8 @@
   "description": "design your react components on an infinite paper",
   "main": "react-design.js",
   "scripts": {
-    "browserify": "cross-env NODE_ENV=production NODE_PATH=. browserify docs/index.js -t babelify -g [ envify --NODE_ENV production ] -g uglifyify | terser --compress --mangle > docs/bundle.js",
-    "start": "cross-env NODE_PATH=. budo docs/index.js --dir docs --serve bundle.js --open --live --pushstate -- -t babelify",
+    "browserify": "cross-env NODE_ENV=production NODE_PATH=. browserify docs/index.js -t babelify -g [ envify --NODE_ENV production ] -g uglifyify | terser --compress --mangle > docs/demo.js",
+    "start": "cross-env NODE_PATH=. budo docs/index.js --dir docs --serve demo.js --open --live --pushstate -- -t babelify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

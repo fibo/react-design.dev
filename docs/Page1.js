@@ -3,15 +3,13 @@ import { DesignPage } from 'react-design'
 
 export default function Page1 () {
   return (
-    <DesignPage>
-      <div
-        style={{
-          background: '#121212',
-          color: '#eee'
-        }}
-      >
-        Page 1
-      </div>
+    <DesignPage style={{ padding: '1rem' }}>
+      <h1>React design</h1>
+
+      <p>
+        This page is rendered as an <code>iframe</code> inside an <em>infinite paper</em>.
+        You can zoom using mouse wheel and translate with mouse dragging.
+      </p>
     </DesignPage>
   )
 }

@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
 export function Design () {
+  const [origin, setOrigin] = useState({ x: 10, y: 0 })
   const [scale, setScale] = useState(0.85)
+  const [pointerCoordinates, setPointerCoordinates] = useState()
+  const [isDragging, setIsDragging] = useState(false)
 
   // Disable scroll.
   useEffect(() => {
@@ -10,15 +13,29 @@ export function Design () {
 
   return (
     <div
+      onMouseDown={({ clientX: x, clientY: y }) => {
+        setPointerCoordinates({ x, y })
+        setIsDragging(true)
+      }}
+      onMouseMove={({ clientX: x, clientY: y }) => {
+        if (isDragging) {
+          // 1. Translate origin.
+          setOrigin({
+            x: origin.x - pointerCoordinates.x + x,
+            y: origin.y - pointerCoordinates.y + y
+          })
+          // 2. Update pointer coordinates.
+          setPointerCoordinates({ x, y })
+        }
+      }}
+      onMouseUp={event => {
+        setIsDragging(false)
+      }}
       onWheel={event => {
-        event.preventDefault()
-
-        setScale(scale + event.deltaY * -0.001)
-        // Restrict scale
-    // scale = Math.min(Math.max(.125, scale), 4)
+        setScale(scale - event.deltaY * 0.001)
       }}
       style={{
-        background: 'transparent',
+        background: '#fefefe',
         position: 'absolute',
         left: 0,
         top: 0,
@@ -29,12 +46,12 @@ export function Design () {
 
       <div
         style={{
-          background: 'magenta',
           position: 'absolute',
-          left: 100,
-          top: 100,
+          left: origin.x + 100,
+          top: origin.y + 100,
           height: 812 * scale,
-          width: 375 * scale
+          width: 375 * scale,
+          boxShadow: '1px 1px 7px 1px rgba(0, 0, 0, 0.17)'
         }}
       >
         <iframe
@@ -42,7 +59,9 @@ export function Design () {
           height={812 * scale}
           width={375 * scale}
           style={{
-            position: 'relative',
+            position: 'absolute',
+            left: 0,
+            top: 0,
             height: 812,
             width: 375,
             border: 0,
@@ -55,14 +74,14 @@ export function Design () {
   )
 }
 
-export function DesignPage ({ children }) {
+export function DesignPage ({ children, className, style = {} }) {
   return (
     <div
+      className={className}
       style={{
         background: 'transparent',
-        position: 'absolute',
-        left: 0,
-        top: 0,
+        color: '#121212',
+        ...style,
         height: '100vh',
         width: '100vw'
       }}
