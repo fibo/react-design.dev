@@ -2,7 +2,7 @@
   "name": "react-design.dev",
   "version": "0.0.0",
   "description": "design your react components on an infinite paper",
-  "main": "react-design.js",
+  "main": "react-design.dev.js",
   "scripts": {
     "browserify": "cross-env NODE_ENV=production NODE_PATH=. browserify docs/index.js -t babelify -g [ envify --NODE_ENV production ] -g uglifyify | terser --compress --mangle > docs/demo.js",
     "start": "cross-env NODE_PATH=. budo docs/index.js --dir docs --serve demo.js --open --live --pushstate -- -t babelify",
@@ -10,11 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fibo/react-design.git"
+    "url": "git+https://github.com/fibo/react-design.dev.git"
   },
   "keywords": [
     "react",
     "design",
+    "development",
     "sketch",
     "figma",
     "framer"
@@ -25,9 +26,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fibo/react-design/issues"
+    "url": "https://github.com/fibo/react-design.dev/issues"
   },
-  "homepage": "https://github.com/fibo/react-design#readme",
+  "homepage": "https://react-design.dev",
   "devDependencies": {
     "react-router-dom": "^5.1.2",
     "zeroconf-redux": "^5.3.0"

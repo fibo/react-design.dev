@@ -1,4 +1,4 @@
-# react-design
+# react-design.dev
 
 > design your react components on an infinite paper
 

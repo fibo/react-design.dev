@@ -1,5 +1,5 @@
 import React from 'react'
-import { DesignPage } from 'react-design'
+import { DesignPage } from 'react-design.dev'
 
 export default function Page1 () {
   return (

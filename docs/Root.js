@@ -1,5 +1,5 @@
 import React from 'react'
-import { Design, DesignNotFound } from 'react-design'
+import { Design, DesignNotFound } from 'react-design.dev'
 import {
   BrowserRouter,
   Redirect,
