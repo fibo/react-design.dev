@@ -2,10 +2,6 @@
 
 > design your react components on an infinite paper
 
-**NOTA BENE** This project is still at an embryonic stage, I got a first prototype and I am so excited that I want to publish to get feedbacks as soon as possible. In this demo you have an iframe inside an infinite paper where you can zoom and translate: https://react-design.dev
-
-## [Features](https://github.com/fibo/react-design/projects/1)
-
 ## Motivation
 
 Tools like Sketch, Figma and Framer give you an infinite paper where you can draw your ideas.
